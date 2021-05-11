@@ -1,4 +1,4 @@
-package com.example.demo.fizz_buzz;
+package com.example.demo.fizz_buzz.answer;
 
 import com.example.demo.fizz_buzz.processor.Processor;
 import com.example.demo.fizz_buzz.processor.ProcessorContainer;
