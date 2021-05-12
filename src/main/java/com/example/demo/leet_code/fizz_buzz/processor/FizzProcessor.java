@@ -1,4 +1,4 @@
-package com.example.demo.fizz_buzz.processor;
+package com.example.demo.leet_code.fizz_buzz.processor;
 
 import java.util.List;
 

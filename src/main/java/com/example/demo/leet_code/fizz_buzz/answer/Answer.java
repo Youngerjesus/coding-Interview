@@ -1,7 +1,7 @@
-package com.example.demo.fizz_buzz.answer;
+package com.example.demo.leet_code.fizz_buzz.answer;
 
-import com.example.demo.fizz_buzz.processor.Processor;
-import com.example.demo.fizz_buzz.processor.ProcessorContainer;
+import com.example.demo.leet_code.fizz_buzz.processor.Processor;
+import com.example.demo.leet_code.fizz_buzz.processor.ProcessorContainer;
 
 import java.util.ArrayList;
 import java.util.List;

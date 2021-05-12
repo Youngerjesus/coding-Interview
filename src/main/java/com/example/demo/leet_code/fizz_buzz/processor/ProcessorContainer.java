@@ -1,4 +1,4 @@
-package com.example.demo.fizz_buzz.processor;
+package com.example.demo.leet_code.fizz_buzz.processor;
 
 public class ProcessorContainer {
     private final FizzBuzzProcessor fizzBuzzProcessor = new FizzBuzzProcessor();

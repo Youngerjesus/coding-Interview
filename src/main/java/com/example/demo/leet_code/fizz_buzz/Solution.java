@@ -1,6 +1,6 @@
-package com.example.demo.fizz_buzz;
+package com.example.demo.leet_code.fizz_buzz;
 
-import com.example.demo.fizz_buzz.answer.Answer;
+import com.example.demo.leet_code.fizz_buzz.answer.Answer;
 
 import java.util.List;
 
