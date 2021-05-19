@@ -13,11 +13,12 @@ public class OtherSolution extends Solution{
                 bracket.setOpenBracket(s.charAt(i));
                 stack.push(bracket);
             }
-            else {
+            else if(Bracket.isCloseBracket(s.charAt(i))){
                 if(stack.isEmpty()) return false;
-
+                
                 Bracket bracket = stack.pop();
-                if(bracket.isUnMatch(s.charAt(i))){
+                bracket.setCloseBracket(s.charAt(i));
+                if(bracket.isUnMatch()){
                     return false;
                 }
             }

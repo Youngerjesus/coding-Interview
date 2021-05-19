@@ -16,8 +16,8 @@ public abstract class AbstractBracket {
         pair.put(']','[');
     }
 
-    public abstract boolean isMatch(char bracket);
-    public abstract boolean isUnMatch(char bracket);
+    public abstract boolean isMatch();
+    public abstract boolean isUnMatch();
 
     public static boolean isOpenBracket(char bracket) {
         return (bracket == '(' || bracket == '{' || bracket == '[');

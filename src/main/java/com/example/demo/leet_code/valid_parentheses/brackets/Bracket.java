@@ -21,12 +21,12 @@ public class Bracket extends AbstractBracket{
     }
 
     @Override
-    public boolean isMatch(char closeBracket) {
+    public boolean isMatch() {
         return pair.get(openBracket) == closeBracket;
     }
 
     @Override
-    public boolean isUnMatch(char closeBracket) {
-        return !isMatch(closeBracket);
+    public boolean isUnMatch() {
+        return !isMatch();
     }
 }
