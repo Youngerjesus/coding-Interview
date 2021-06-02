@@ -1,4 +1,4 @@
-package com.example.demo.leet_code.binary_tree_inodrer;
+package com.example.demo.leet_code.binary_tree_inorder;
 
 import java.util.ArrayList;
 import java.util.List;
