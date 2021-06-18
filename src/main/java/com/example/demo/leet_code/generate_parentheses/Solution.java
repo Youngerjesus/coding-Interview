@@ -11,6 +11,7 @@ public class Solution {
         return list;
     }
 
+    // recursion + termination Check
     private void generateParenthesisRecursive(String s, int n, int openBracket, int closeBracket) {
         if(openBracket > n || closeBracket > n) return;
 
@@ -19,7 +20,7 @@ public class Solution {
             return;
         }
 
-        if(s == "" || closeBracket > openBracket) {
+        if(s.equals("") || closeBracket > openBracket) {
             generateParenthesisRecursive(s + "(", n, openBracket + 1, closeBracket);
             return;
         }
