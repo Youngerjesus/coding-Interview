@@ -10,19 +10,26 @@ public class Solution {
 
     private int getMinimumDifferenceWithInorder(TreeNode node, int beforeValue) {
         if(node.left != null) {
-            int ret = getMinimumDifferenceWithInorder(node.left, beforeValue);
-            minValue = Math.min(Math.abs(node.val - ret), minValue);
+            int leftValue = getMinimumDifferenceWithInorder(node.left, beforeValue);
+            minValue = Math.min(Math.abs(node.val - leftValue), minValue);
+            if(node.left.right != null) {
+                int rightValue = getMinimumDifferenceWithInorder(node.left, node.val);
+                minValue = Math.min(Math.abs(node.val - rightValue), minValue);
+            }
         }
 
-        minValue = Math.min(Math.abs(node.val - beforeValue), minValue);
         int ret = node.val;
-
+        if(node.val != beforeValue) minValue = Math.min(Math.abs(node.val - beforeValue), minValue);
 
         if(node.right != null) {
-            ret = getMinimumDifferenceWithInorder(node.right);
-            minValue = Math.min(Math.abs(ret - node.val), minValue);
-        }
+            int rightValue = getMinimumDifferenceWithInorder(node.right, beforeValue);
+            minValue = Math.min(Math.abs(node.val - rightValue), minValue);
 
+            if(node.right.left != null) {
+                int leftValue = getMinimumDifferenceWithInorder(node.right, node.val);
+                minValue = Math.min(Math.abs(node.val - leftValue), minValue);
+            }
+        }
         return ret;
     }
 }
