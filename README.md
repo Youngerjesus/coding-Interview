@@ -1,3 +1,3 @@
 # Coding Interview
 
-https://leetcode.com/problemset/top-interview-questions/
+leetcode: https://leetcode.com/problemset/top-interview-questions/
