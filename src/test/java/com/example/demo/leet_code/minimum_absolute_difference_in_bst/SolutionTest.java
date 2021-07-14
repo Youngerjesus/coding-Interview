@@ -52,19 +52,4 @@ class SolutionTest {
         //then
         assertEquals(answer, output);
     }
-
-    @Test
-    void testCase4(){
-        //given
-        TreeNode root = new TreeNode(600);
-        root.left = new TreeNode(424);
-        root.right = new TreeNode(612);
-        root.left.right = new TreeNode(499);
-        root.right.right = new TreeNode(689);
-        int answer = 12;
-        //when
-        int output = solution.getMinimumDifference(root);
-        //then
-        assertEquals(answer, output);
-    }
 }

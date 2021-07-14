@@ -72,15 +72,4 @@ class OtherSolutionTest {
         //then
         assertEquals(output, answer);
     }
-
-    @Test
-    void testCase7(){
-        //given
-        int n = 5000000;
-        int answer = 114155;
-        //when
-        int output = solution.countPrimes(n);
-        //then
-        assertEquals(output, answer);
-    }
 }

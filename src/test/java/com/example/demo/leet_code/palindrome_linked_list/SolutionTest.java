@@ -31,16 +31,4 @@ class SolutionTest {
         //then
         assertFalse(output);
     }
-
-    @Test
-    void testCase3(){
-        //given
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(0);
-        head.next.next = new ListNode(0);
-        //when
-        boolean output = solution.isPalindrome(head);
-        //then
-        assertFalse(output);
-    }
 }

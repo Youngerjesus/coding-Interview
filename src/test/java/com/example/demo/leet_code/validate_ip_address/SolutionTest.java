@@ -104,8 +104,8 @@ class SolutionTest {
 
     @Test
     void testCase13(){
-        String IP = "20EE:Fb8:85a3:0:0:8A2E:0370:7334";
-        String actual = "IPv6";
+        String IP = "20EE:Fb8:85a3::8A2E:0370:7334";
+        String actual = "Neither";
         String expected = solution.validIPAddress(IP);
 
         assertEquals(expected, actual);

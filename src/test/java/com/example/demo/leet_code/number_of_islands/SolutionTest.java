@@ -8,18 +8,4 @@ class SolutionTest {
 
     Solution solution = new Solution();
 
-    @Test
-    void testCase1(){
-        //given
-        char[][] grid = new char[][]{{'1','1','1','1','0'},
-                                    {'1','1','0','1','0'},
-                                    {'1','1','0','0','0'},
-                                    {'0','0','0','0','0'}};
-        int answer = 1;
-        //when
-        int output = solution.numIslands(grid);
-        //then
-        assertEquals(output, answer);
-    }
-
 }

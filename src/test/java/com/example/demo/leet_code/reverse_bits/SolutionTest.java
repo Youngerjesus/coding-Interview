@@ -18,15 +18,4 @@ class SolutionTest {
         //then
         assertEquals(output, answer);
     }
-
-    @Test
-    void testCase2(){
-        //given
-        int n = Integer.parseUnsignedInt("11111111111111111111111111111101", 2);
-        long answer = 3221225471L;
-        //when
-        int output = solution.reverseBits(n);
-        //then
-        assertEquals(output, answer);
-    }
 }

@@ -86,17 +86,6 @@ class OtherSolution2Test {
     }
 
     @Test
-    void testCase8(){
-        //given
-        String s = " ";
-        int answer = 0;
-        //when
-        int expected = solution.lengthOfLongestSubstring(s);
-        //then
-        assertEquals(expected, answer);
-    }
-
-    @Test
     void testCase9(){
         //given
 

@@ -9,25 +9,6 @@ class SolutionTest {
     Solution solution = new Solution();
 
     @Test
-    void testCase1(){
-        //given
-        ListNode headA = new ListNode(4);
-        headA.next = new ListNode(1);
-        headA.next.next = new ListNode(8);
-        headA.next.next.next = new ListNode(4);
-        headA.next.next.next.next = new ListNode(5);
-
-        ListNode headB = new ListNode(5);
-        headB.next = new ListNode(6);
-        headB.next.next = new ListNode(1);
-        headB.next.next.next = headA.next.next;
-        //when
-        ListNode output = solution.getIntersectionNode(headA, headB);
-        //then
-        assertEquals(8, output.val);
-    }
-
-    @Test
     void testCase2(){
         //given
         ListNode headA = new ListNode(1);
