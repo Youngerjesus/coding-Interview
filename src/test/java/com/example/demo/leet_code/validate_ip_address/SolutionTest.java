@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -108,6 +109,17 @@ class SolutionTest {
         String actual = "Neither";
         String expected = solution.validIPAddress(IP);
 
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testCase14(){
+        //given
+        String IP = "1.1.1.1.";
+        String actual = "Neither";
+        //when
+        String expected = solution.validIPAddress(IP);
+        //then
         assertEquals(expected, actual);
     }
 }

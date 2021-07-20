@@ -32,8 +32,6 @@ class SolutionTest {
     }
 
     @Test
-    @DisplayName("20" +
-            "[[0,10],[3,18],[5,5],[6,11],[11,14],[13,1],[15,1],[17,4]]")
     void testCase4(){
         //given
         int numberCourses = 5;
@@ -42,5 +40,16 @@ class SolutionTest {
         boolean output = solution.canFinish(numberCourses, prerequisites);
         //then
         assertTrue(output);
+    }
+
+    @Test
+    void testCase5(){
+        //given
+        int numberCourses = 1;
+        int[][] preRequisites = new int[][]{};
+        //when
+        boolean actual = solution.canFinish(numberCourses, preRequisites);
+        //then
+        assertTrue(actual);
     }
 }

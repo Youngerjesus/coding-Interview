@@ -21,9 +21,9 @@ public class Solution {
     }
 
     private boolean isIpv4(String originalIp, String[] ipv4Strings) {
-        if(originalIp.length() > 15) return false;
+        if(originalIp.length() > 15 || originalIp.length() == 0) return false;
 
-        if(originalIp.length() == 0 || originalIp.charAt(0) == '.' || originalIp.charAt(originalIp.length() - 1) == '.')
+        if(originalIp.charAt(0) == '.' || originalIp.charAt(originalIp.length() - 1) == '.')
             return false;
 
         if(ipv4Strings.length != 4) return false;

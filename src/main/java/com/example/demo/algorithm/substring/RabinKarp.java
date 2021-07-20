@@ -10,7 +10,7 @@ public class RabinKarp {
     public RabinKarp(String pat) {
         M = pat.length();
         Q = longRandomPrime();
-        R = 256e;
+        R = 256;
 
         RM = 1;
         for (int i = 0; i < M; i++) {

@@ -1,60 +1,50 @@
 package com.example.demo.leet_code.coure_schedule;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        List<List<Integer>> adjList = new ArrayList<>();
-
+        List<Set<Integer>> requisiteEdges = new ArrayList<>();
+        List<List<Integer>> preRequisiteEdges = new ArrayList<>();
         for (int i = 0; i < numCourses; i++) {
-             adjList.add(new ArrayList<>());
+            requisiteEdges.add(new HashSet<>());
+            preRequisiteEdges.add(new ArrayList<>());
         }
 
-        boolean[] isNotStartNumber = new boolean[numCourses];
         for (int i = 0; i < prerequisites.length; i++) {
+            int requisite = prerequisites[i][0];
             int preRequisite = prerequisites[i][1];
-            int requisite =  prerequisites[i][0];
-            if (preRequisite == requisite) return false;
-            isNotStartNumber[requisite] = true;
-            adjList.get(preRequisite).add(requisite);
+            requisiteEdges.get(requisite).add(preRequisite);
+            preRequisiteEdges.get(preRequisite).add(requisite);
         }
 
         boolean[] isVisited = new boolean[numCourses];
-
-        for (int i = 0; i < isNotStartNumber.length; i++) {
-            if(!isNotStartNumber[i]) {
-                boolean res = dfs(i, adjList, isVisited);
-                if(!res) return false;
+        Queue<Integer> preCourseQueue = new ArrayDeque<>();
+        for (int i = 0; i < numCourses; i++) {
+            if (requisiteEdges.get(i).isEmpty()) {
+                isVisited[i] = true;
+                preCourseQueue.add(i);
             }
         }
 
-        boolean isAllTrue = true;
-        for (int i = 0; i < isNotStartNumber.length; i++) {
-            if(!isNotStartNumber[i]){
-                isAllTrue = false;
+        int numCompleteCourse = 0;
+        while (!preCourseQueue.isEmpty()) {
+            Integer preCourse = preCourseQueue.poll();
+
+            for (int i = 0; i < preRequisiteEdges.get(preCourse).size(); i++) {
+                Integer course = preRequisiteEdges.get(preCourse).get(i);
+                Set<Integer> requisiteEdgeSet = requisiteEdges.get(course);
+                requisiteEdgeSet.remove(preCourse);
+                if (requisiteEdgeSet.isEmpty() && !isVisited[course]) {
+                    preCourseQueue.add(course);
+                    isVisited[course] = true;
+                }
             }
+
+            numCompleteCourse++;
         }
 
-        if(isAllTrue) return false;
-        return true;
+        return numCompleteCourse == numCourses;
     }
 
-    private boolean dfs(int start, List<List<Integer>> adjList, boolean[] isVisited) {
-        isVisited[start] = true;
-        List<Integer> nextList = adjList.get(start);
-
-        for (int i = 0; i < nextList.size(); i++) {
-            if(isVisited[nextList.get(i)]){
-                return false;
-            }
-            else {
-                boolean ret = dfs(nextList.get(i), adjList, isVisited);
-                if(!ret) return false;
-            }
-        }
-        isVisited[start] = false;
-        return true;
-    }
 }
