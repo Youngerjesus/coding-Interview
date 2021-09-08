@@ -71,12 +71,15 @@ public class UsingNumber {
     }
 
     public List<String> getPossibleCombinationsOrderByDictionary() {
+        if (noPhoneNumber()) return new ArrayList<>();
+
         List<String> result = new ArrayList<>();
-
-        if (alphabetCollectors.isEmpty()) return result;
-
         createPossibleCase(result, alphabetCollectors, 0, "");
         return result;
+    }
+
+    private boolean noPhoneNumber() {
+        return alphabetCollectors.isEmpty();
     }
 
     private void createPossibleCase(List<String> result, List<List<String>> alphabetCollectors, int i, String s) {
